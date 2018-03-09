@@ -5,11 +5,17 @@
 * Aljaž Glavač
 * Andraž Raspor
 * Luka Perovič
- 
+
+## Podatki ##
+
+Vir podatkov: https://podatki.gov.si, OPSI: odprti podatki Slovenije.
+Izbrali smo si Evidenco registriranih vozil. Vključuje vse tehnične podatke, brez osebnih podatkov lastnikov.
+Podatki so shranjeni v obliki csv.
+
 ## Cilji oz. vprašanja ##
 
  Med analizo podatkov bomo poskušali odgovoriti na sledeča vprašanja:
- 
+
  * Ali oz. kako spol vpliva na lastništva avtomobilskih znamk, barve avtomobilov, tipa motorja ipd.?
 * Kakšne avtomobile registrirajo fizične ali pravne osebe?
 * Kje je največ registriranih avtomobilov?
