@@ -10,7 +10,7 @@
 
 Vir podatkov: https://podatki.gov.si, OPSI: odprti podatki Slovenije.  
 Izbrali smo si Evidenco registriranih vozil. Vključuje vse tehnične podatke, brez osebnih podatkov lastnikov.  
-Podatki so shranjeni v obliki csv.
+Podatki so v tabelarični obliki (csv).
 
 ## Cilji oz. vprašanja ##
 
