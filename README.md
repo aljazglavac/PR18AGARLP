@@ -7,6 +7,7 @@
 * Luka Perovič
 
 ## Vmestno poročilo o pravljenem delu ##
+### 13.4.2018 ###
 
 ## Predstavitev naše množice podatkov ##
 
@@ -35,7 +36,7 @@ Ker so podatki iz spletne strani, so seveda vmes med imeni atributov in njihovim
 
 Ko smo prenesli in zreducirali našo množico, samo ugotovili da veliko šumnikov nas jupyter notebook neprepozna, in zato prikaže čudne znake. Zato smo si zadali da to nekako popravimo. To bi nam pomagalo pri izbiranu vrednsoti iz množice (šumnik nebi bilo mogoče izbrati saj "š" znak ni "š" znak ampak neko drugi znak). Pomagali bi nam pa tudi pri reprezentaciji imen atributov na grafih.
 
-Po dolgem raziskovanju kateri encoding uporabiti smo se odločili da ta problem in pomankljivost naše množice zanemarimo. Prej naštet problem izbiranja določenih vrstic, je bil rešen z uporabo idjev katere smo prenesli zravn naših podatkov.
+Po dolgem raziskovanju kateri encoding uporabiti smo se odločili da ta problem in pomankljivost naše množice zanemarimo. Prej naštet problem izbiranja določenih vrstic, je bil rešen z uporabo idjev katere smo prenesli zravn naših podatkov. Uporabili smo samo encoding 'latin1' kateri prikaže samo določene šumnike.
 
 Kot primer uporabe idjev:
 
@@ -43,10 +44,9 @@ Stoplce "barva vozila" vsebuje vrednost Črna, katera se v našem primeru izpiš
 
 ## Branje podatkov ##
 
-Množica katero smo prenesli iz spletne strani je bila v obliki csv datotek, kar nam je mogočalo branje le teh z uporabo csv readerja v napih jupyter notebookih. Iz vseh stolpcev smo izbrali samo določene stoplce saj, nas drugi preprosto niso zanimali pri naših raziskavah.
+Množica podatkov, katero smo prenesli iz spletne strani je bila v obliki csv datotek, kar nam je mogočalo branje le teh z uporabo csv readerja v napih jupyter notebookih. Iz vseh stolpcev smo izbrali samo določene stoplce saj, nas drugi preprosto niso zanimali pri naših raziskavah.
 
-* Datum prve registracije
-* Datum prve registracije v SLO
+* Datum prve registracije, kjerkoli in nato še samo v SLO
 * Status vozila
 * Izvajalna enota prve registracije
 * Starost uporabnika vozila
