@@ -1,4 +1,12 @@
-# Vmestno poročilo o pravljenem delu #
+# PR2018AGARLP #
+
+### Avtorji ###
+
+* Aljaž Glavač
+* Andraž Raspor
+* Luka Perovič
+
+## Vmestno poročilo o pravljenem delu ##
 
 ## Predstavitev naše množice podatkov ##
 
@@ -33,8 +41,32 @@ Kot primer uporabe idjev:
 
 Stoplce "barva vozila" vsebuje vrednost Črna, katera se v našem primeru izpiše pravilno. Zato je bil zraven stoplce "barva vozila" dodan tudi stoplev "id barve vozila". Ta nam omogoča da v excel tabeli najdemo črno barvo in nato preko poizvedne po stoplcu z idji barve izberemo vse tiste vrstice oz. avtomobile katerega barva je črna.
 
-## Opis atributov ##
-
 ## Branje podatkov ##
+
+Množica katero smo prenesli iz spletne strani je bila v obliki csv datotek, kar nam je mogočalo branje le teh z uporabo csv readerja v napih jupyter notebookih. Iz vseh stolpcev smo izbrali samo določene stoplce saj, nas drugi preprosto niso zanimali pri naših raziskavah.
+
+* Datum prve registracije
+* Datum prve registracije v SLO
+* Status vozila
+* Izvajalna enota prve registracije
+* Starost uporabnika vozila
+* Ali je uporabnik pravna ali fizicna oseba
+* Spol uporabnika
+* Upravna enota
+* Občina
+* Starost lastnika vozila
+* Znakma, barva, teža vozila
+* Vrsta goriva
+* Število sedežev
+* Dolžina, širina in višina
+* Leto izdelave
+
+Primer branje datoteke.
+```python
+df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding = 'latin1', usecols=stolpci)
+#                     pod to csv datoteke             , branje šumnikov    , uporaba samo določenih stolpcov
+```
+
+## Opis atrbutov in vrednosti ##
 
 ## Grafi ##
