@@ -2,7 +2,7 @@
 
 ## Predstavitev naše množice podatkov ##
 
-Množica podatkov nad katero bomo opravljali raziskave in ugotavljali kakšne uplive imajo določeni atributi na druge, smo našli na spletni strni www.podatki.gov.si. Na omenjeni spletni strani so različni statistični podatki zbrani iz slovenije, kar je tudi razlog da smo se odločili uporabljati te podatke oz. množico podatkov.
+Množica podatkov nad katero bomo opravljali raziskave in ugotavljali kakšne uplive imajo določeni atributi na druge, smo našli na spletni strani www.podatki.gov.si. Na omenjeni spletni strani so različni statistični podatki zbrani iz slovenije, kar je tudi razlog da smo se odločili uporabljati te podatke oz. množico podatkov.
 
 Naša množica sestoji iz podatkov o prvič registriranih vozilih v Sloveniji. Podatki so razdeljeni po mescih in so dostopni za od leta 2012 do 2017. 
 
@@ -18,9 +18,20 @@ Iz celotne podatkovne množice, smo se nato odločili da vzamemo samo tri leta.
 * 2015
 * 2016
 * 2017
+
 pri vsakem letu smo vzeli vseh 12 mesecev.
 
 ## Problem encodinga ##
+
+Ker so podatki iz spletne strani, so seveda vmes med imeni atributov in njihovimi vrednostmi, katere bomo opisali kasneje), najdejo tudi šumniki.
+
+Ko smo prenesli in zreducirali našo množico, samo ugotovili da veliko šumnikov nas jupyter notebook neprepozna, in zato prikaže čudne znake. Zato smo si zadali da to nekako popravimo. To bi nam pomagalo pri izbiranu vrednsoti iz množice (šumnik nebi bilo mogoče izbrati saj "š" znak ni "š" znak ampak neko drugi znak). Pomagali bi nam pa tudi pri reprezentaciji imen atributov na grafih.
+
+Po dolgem raziskovanju kateri encoding uporabiti smo se odločili da ta problem in pomankljivost naše množice zanemarimo. Prej naštet problem izbiranja določenih vrstic, je bil rešen z uporabo idjev katere smo prenesli zravn naših podatkov.
+
+Kot primer uporabe idjev:
+
+Stoplce "barva vozila" vsebuje vrednost Črna, katera se v našem primeru izpiše pravilno. Zato je bil zraven stoplce "barva vozila" dodan tudi stoplev "id barve vozila". Ta nam omogoča da v excel tabeli najdemo črno barvo in nato preko poizvedne po stoplcu z idji barve izberemo vse tiste vrstice oz. avtomobile katerega barva je črna.
 
 ## Opis atributov ##
 
