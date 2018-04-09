@@ -63,9 +63,12 @@ Množica podatkov, katero smo prenesli iz spletne strani je bila v obliki csv da
 
 Primer branje datoteke.
 ```python
-df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding = 'latin1', usecols=stolpci)
-#                     pod to csv datoteke             , branje šumnikov    , uporaba samo določenih stolpcov
+df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep=';', usecols=stolpci)
 ```
+1. pot do datoteke
+2. encoding ki delno "razume" šumnike
+3. nastavitev razdelilnika na ';'
+4. izbira samo določenih stoplev
 
 ## Opis atrbutov in vrednosti ##
 
