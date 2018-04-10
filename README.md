@@ -46,6 +46,22 @@ Stoplce "barva vozila" vsebuje vrednost Črna, katera se v našem primeru izpiš
 
 Množica podatkov, katero smo prenesli iz spletne strani je bila v obliki csv datotek, kar nam je mogočalo branje le teh z uporabo csv readerja v napih jupyter notebookih. Iz vseh stolpcev smo izbrali samo določene stoplce saj, nas drugi preprosto niso zanimali pri naših raziskavah.
 
+Opis izbranih atributov se nahaja malo nižje, pod naslovom, Opis atributov in vrednosti.
+
+Primer branje datoteke.
+```python
+df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep=';', decimal=',', usecols=stolpci, dtype=tipi)
+#                    1.                                 2.                 3.       4.           5.               6.
+```
+1. pot do datoteke
+2. encoding ki delno "razume" šumnike
+3. nastavitev razdelilnika na ';'
+4. decimalna števila se preberejo z ',' ne z '.'
+5. izbira samo določenih stolpcev
+6. določanje podatkovnega tipa stolpcev
+
+## Opis atrbutov in vrednosti ##
+
 * Datum prve registracije, kjerkoli in nato še samo v SLO
 * Status vozila
 * Izvajalna enota prve registracije
@@ -61,19 +77,6 @@ Množica podatkov, katero smo prenesli iz spletne strani je bila v obliki csv da
 * Dolžina, širina in višina
 * Leto izdelave
 
-Primer branje datoteke.
-```python
-df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep=';', usecols=stolpci, dtype=tipi)
-#                    1.                                 2.                 3.       4.               5.
-```
-1. pot do datoteke
-2. encoding ki delno "razume" šumnike
-3. nastavitev razdelilnika na ';'
-4. izbira samo določenih stoplev
-5. določanje podatkovnega tipa stolpcev
-
-## Opis atrbutov in vrednosti ##
-
 ## Grafi ##
 
 Prikaz štavila registriranih vozil v letu 2015 mesca januarja, urejenih po tipu goriva.
@@ -81,6 +84,7 @@ Prikaz štavila registriranih vozil v letu 2015 mesca januarja, urejenih po tipu
 
 Prikaz števila registiranih motornih vozil ki za svoje delovanje uporabljajo gorivo tipa mešanica.
 ![Mesanica](images/mesanica.png)
+
 Kot vidimo je največ takih vozil registriranih v mesecu Juniju in Juliju, oziroma poleti. 
 Iz tega lahko razberemo da se je takrat registriralo največ motorjev, skuterjev ter podobnih prevoznih stredstev na dveh kolesih.
 Kar je tudi logično saj se pozimi ni mogoče vozit s takimi prevoznimi sredstvi. Poleti pa je to velik trend.
