@@ -77,10 +77,10 @@ df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep='
 ## Grafi ##
 
 Prikaz štavila registriranih vozil v letu 2015 mesca januarja, urejenih po tipu goriva.
-![Goriva][images/goriva.png]
+![Goriva](images/goriva.png)
 
 Prikaz števila registiranih motornih vozil ki za svoje delovanje uporabljajo gorivo tipa mešanica.
-![Mesanica][images/mesanica.png]
+![Mesanica](images/mesanica.png)
 Kot vidimo je največ takih vozil registriranih v mesecu Juniju in Juliju, oziroma poleti. 
 Iz tega lahko razberemo da se je takrat registriralo največ motorjev, skuterjev ter podobnih prevoznih stredstev na dveh kolesih.
 Kar je tudi logično saj se pozimi ni mogoče vozit s takimi prevoznimi sredstvi. Poleti pa je to velik trend.
