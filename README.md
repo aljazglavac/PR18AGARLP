@@ -79,10 +79,27 @@ df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep='
 
 ## Grafi ##
 
-Prikaz štavila registriranih vozil v letu 2015 mesca januarja, urejenih po tipu goriva.
+### Prikaz štavila registriranih vozil v letu 2015, urejenih po tipu goriva. ###
+
+```python
+gorivo = data.groupby('P.1.3-Vrsta goriva (opis)')['P.1.3-Vrsta goriva (opis)'].count().sort_values(ascending=False)
+```
+
 ![Goriva](images/goriva.png)
 
-Prikaz števila registiranih motornih vozil ki za svoje delovanje uporabljajo gorivo tipa mešanica.
+Kot je iz grafa razvidno, največ novo registriranih prevoznih sredstev uporablja dizel, na drugem mestu je bencin, in tako naprej. Ostala goriva kot so; naftni plin, kombinirana goriva in zemeljski plin, so tako redka da se jih na grafu niti ne vidi. Pozitivno opažanje iz grafa je to, da so vozila na električni pogoj na tretjem mestu, kar je dobro za naš planet. Vendar sta nafta in bencin kar krepko pred elektriko.
+
+### Prikaz števila registiranih motornih vozil ki za svoje delovanje uporabljajo gorivo tipa mešanica. ###
+
+```python
+mesanica = dict()
+for m,data in zip(mesec,df15):
+	    mesanica[m] = len(data[data['P.1.3-Vrsta goriva (oznaka)'] == 'M'])
+
+plt.bar(range(len(mesanica)), mesanica.values(), color='pink')
+plt.xticks(range(len(mesec)), mesec)
+plt.xticks(rotation=90)
+```
 ![Mesanica](images/mesanica.png)
 
 Kot vidimo je največ takih vozil registriranih v mesecu Juniju in Juliju, oziroma poleti. 
