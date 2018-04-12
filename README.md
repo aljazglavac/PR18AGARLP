@@ -155,3 +155,14 @@ plot = drzava[:10].plot.bar()
 ![Drzave](images/drzave.png)
 
 Na grafu je prikazanih 10 držav iz katerih izvira največ vozil. Vidimo, da jih je največ iz Nemčije (50293 vozil), prbližno polovico manj pa iz Francije (26057 vozil). Sledi Češka republika (9957 vozil).
+
+### Prikaz občin kjer je resistriranih največ vozil ###
+
+```python
+obcine = data.groupby('C1.3-Obcina uporabnika vozila (opis)')['C1.3-Obcina uporabnika vozila (opis)'].count().sort_values(ascending=False)
+plot = obcine[:10].plot.bar()
+```
+
+![Obcine](images/obcine_registracije.png)
+
+Na grafu je prikazanih 10 občin v katerih se na novo registrira največ vozil. Razvidno je, da se jih največ registrira v Ljubljani (31380 vozil), kar je skoraj petkrat več kot v Mariboru, ki je naslednji po številu registracij (6629 vozil). V Ljubljani se registrira kar 22,6 % novih vozil v Sloveniji.
