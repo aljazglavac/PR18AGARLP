@@ -108,8 +108,29 @@ Kar je tudi logično saj se pozimi ni mogoče vozit s takimi prevoznimi sredstvi
 
 
 ### Povprečna nazivna moč osebnih avtomobilov glede na starostno skupino. ###
+#### Priprava podatkov za ta graf ####
 
 ```python
+# iz podatkov vzamem le osebne avtomobile (vozila z oznako M1)
+dataOA = data[data['J-Kategorija in vrsta vozila (oznaka)'] == "M1"]
+
+#ker bom primerjal po starosti iz podatkov vzamem le vnose, kjer je znana starost
+dataOAS = dataOA[dataOA['C-Starost uporabnika vozila']>0]
+
+#starost spremenim v kategorije
+dataOAS['C-Starost uporabnika vozila'] = pd.cut(dataOAS['C-Starost uporabnika vozila'], 10 retbins=True)[0]
+
+#naredim slovar, kjer za vsako starostno skupino dodam nazivne moci avtomobilov
+ageHP = dict()
+for a in dataOAS['C-Starost uporabnika vozila']:
+    if(a not in ageHP):
+        ageHP[a] = [dataOAS['P.1.2-Nazivna moc'][dataOAS['C-Starost uporabnika vozila']==a].values]
+
+#nato izracunam povprecno moc za posamezno skupino
+avgHP = []
+for ag in ageHP:
+    avgHP.append(sum(ageHP[ag][0]) / len(ageHP[ag][0]))
+
 plt.bar(range(len(starost)), avgHP)
 plt.ylim(ymax = 100, ymin = 10)
 plt.xticks(range(len(starost)), starost)
