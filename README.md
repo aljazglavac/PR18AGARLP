@@ -13,7 +13,7 @@
 
 Množica podatkov nad katero bomo opravljali raziskave in ugotavljali kakšne uplive imajo določeni atributi na druge, smo našli na spletni strani www.podatki.gov.si. Na omenjeni spletni strani so različni statistični podatki zbrani iz slovenije, kar je tudi razlog da smo se odločili uporabljati te podatke oz. množico podatkov.
 
-Naša množica sestoji iz podatkov o prvič registriranih vozilih v Sloveniji. Podatki so razdeljeni po mescih in so dostopni za od leta 2012 do 2017. 
+Naša množica sestoji iz podatkov o prvič registriranih vozilih v Sloveniji. Podatki so razdeljeni po mescih in so dostopni za od leta 2012 do 2017.
 
 Za to množico podatkov smo se odločili saj se nam je zdela zelo zanimiva za ugotvljanje trenodov, kakšne avtomobile slovenci kupujejo, ter druge lastnosti o posameznikovi izbiri avtomobila.
 
@@ -62,20 +62,22 @@ df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep='
 
 ## Opis atrbutov in vrednosti ##
 
-* Datum prve registracije, kjerkoli in nato še samo v SLO
-* Status vozila
-* Izvajalna enota prve registracije
-* Starost uporabnika vozila
-* Ali je uporabnik pravna ali fizicna oseba
-* Spol uporabnika
-* Upravna enota
-* Občina
-* Starost lastnika vozila
-* Znakma, barva, teža vozila
-* Vrsta goriva
-* Število sedežev
-* Dolžina, širina in višina
-* Leto izdelave
+* Datum prve registracije, kjerkoli in nato še samo v SLO - zvezna atributa
+* Status vozila - diskretni atribut (odjavljeno, registrirano, v postopku)
+* Izvajalna enota prve registracije - diskretni atribut
+* Starost uporabnika vozila - zvezni atribut
+* Ali je uporabnik pravna ali fizicna oseba  - diskretni atribut (P ali F)
+* Spol uporabnika - diskretni atribut - (M ali Z, prazno če je oseba pravna)
+* Upravna enota - diskretni atribut
+* Občina - diskretni atribut
+* Starost lastnika vozila - zvezni atribut
+* Znakma - diskretni atribut (Audi, Alfa Romeo, Volkswagen...)
+* barva - diskretni atribut (kovinski-BELA-SREDNJA, kovinski-BELA-SVETLA...)
+* teža vozila - zvezni atribut
+* Vrsta goriva - diskretni atribut (bencin, dizel, zem. plin...)
+* Število sedežev (število) - diskretni atribut
+* Dolžina, širina in višina - zvezni atributi
+* Leto izdelave - diskretni atribut
 
 ## Grafi ##
 
@@ -102,7 +104,7 @@ plt.xticks(rotation=90)
 ```
 ![Mesanica](images/mesanica.png)
 
-Kot vidimo je največ takih vozil registriranih v mesecu Juniju in Juliju, oziroma poleti. 
+Kot vidimo je največ takih vozil registriranih v mesecu Juniju in Juliju, oziroma poleti.
 Iz tega lahko razberemo da se je takrat registriralo največ motorjev, skuterjev ter podobnih prevoznih stredstev na dveh kolesih.
 Kar je tudi logično saj se pozimi ni mogoče vozit s takimi prevoznimi sredstvi. Poleti pa je to velik trend.
 
