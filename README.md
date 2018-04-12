@@ -144,3 +144,14 @@ plt.xlabel('Starostna skupina')
 
 Iz grafa je razvidno, da imajo v povprečju najmočnejše avtomobile osebe stare med 32 in 40 leti ter osebe stare med 62 in 70 leti. Pričakovali smo malo drugačne rezultate. Mislili smo, da bodo najmočnejše avtomobile imele osebe mlajše od 40 let.
 Kot vidimo se povprečna moč zmanjša po 40 letu starosti, nato pa spet dvigne pri 62. Sklepamo, da so osebe nad 60 leti finančno močnejše in si zato lahko privoščijo močnejše avtomobile, hkrati pa imajo verjetno tudi manj družinskih in službenih obveznosti.
+
+### Prikaz držav iz katerih izvira največ na novo registriranih vozil ###
+
+```python
+drzava = data.groupby('D.4.2-Drzava (opis)')['D.4.2-Drzava (opis)'].count().sort_values(ascending=False)
+plot = drzava[:10].plot.bar()
+```
+
+![Drzave](images/drzave.png)
+
+Na grafu je prikazanih 10 držav iz katerih izvira največ vozil. Vidimo, da jih je največ iz Nemčije (50293 vozil), prbližno polovico manj pa iz Francije (26057 vozil). Sledi Češka republika (9957 vozil).
