@@ -6,24 +6,24 @@
 * Andraž Raspor
 * Luka Perovič
 
-## Vmestno poročilo o pravljenem delu ##
+## Vmesno poročilo o opravljenem delu ##
 ### 13.4.2018 ###
 
 ## Predstavitev naše množice podatkov ##
 
-Množica podatkov nad katero bomo opravljali raziskave in ugotavljali kakšne uplive imajo določeni atributi na druge, smo našli na spletni strani www.podatki.gov.si. Na omenjeni spletni strani so različni statistični podatki zbrani iz slovenije, kar je tudi razlog da smo se odločili uporabljati te podatke oz. množico podatkov.
+Množica podatkov nad katero bomo opravljali raziskave in ugotavljali kakšne vplive imajo določeni atributi na druge, smo našli na spletni strani www.podatki.gov.si. Na omenjeni spletni strani so različni statistični podatki zbrani iz Slovenije, kar je tudi razlog, da smo se odločili uporabljati te podatke oz. množico podatkov.
 
 Naša množica sestoji iz podatkov o prvič registriranih vozilih v Sloveniji. Podatki so razdeljeni po mescih in so dostopni za od leta 2012 do 2017.
 
-Za to množico podatkov smo se odločili saj se nam je zdela zelo zanimiva za ugotvljanje trenodov, kakšne avtomobile slovenci kupujejo, ter druge lastnosti o posameznikovi izbiri avtomobila.
+Za to množico podatkov smo se odločili saj se nam je zdela zelo zanimiva za ugotavljanje trendov, kakšne avtomobile slovenci kupujejo, ter druge lastnosti o posameznikovi izbiri avtomobila.
 
-Druga pomembna lastnost podatkov, katera je pomagala da smo se odločili ravno za to množico, je bila da je množica dovolj velika za naše opazovanje. Našli smo veliko drugih podatkov kateri bi bolj ustrezali naši stroki, kot na primer; različna uporaba interneta v slovenskih gospodnistvih, vendar so bile take množice zelo majhne. Pri tako majhni količini podatkov bi bili zagotovo omejeni glede raziskave.
+Pri izbiri podatkovne množice smo gledali tudi na to, da vsebuje dovolj podatkov za opazovanje. Našli smo veliko drugih podatkov, ki bi bolj ustrezali naši stroki, kot na primer; različna uporaba interneta v slovenskih gospodnistvih, vendar so bile take množice zelo majhne. Pri tako majhni količini podatkov bi bili zagotovo omejeni glede raziskave.
 
 ## Manjšanje množice podatkov ##
 
-Ko smo, po skupni odločitvi in izberi podatkov prvič prenesli podatke iz spletne strani smo naleteli na zelo veliko težavo. Kot smo že prej napisali smo izbrali to podatkovno množico, ker je bila tako velika. Vendar se je to sedaj izkazalo da je podatvko preprosto preveč. Preveč jih je bilo za na git ter preveč za naše raziskovanje.
+Ko smo, po skupni odločitvi in izbiri podatkov prvič prenesli podatke iz spletne strani smo naleteli na zelo veliko težavo. Kot smo že prej napisali smo izbrali to podatkovno množico, ker je bila tako velika. Vendar se je sedaj izkazalo, da je podatkov preprosto preveč. Preveč jih je bilo za na git ter preveč za naše raziskovanje.
 
-Iz celotne podatkovne množice, smo se nato odločili da vzamemo samo tri leta.
+Nato smo se odločili, da iz celotne podatkovne množice vzamemo samo tri leta.
 * 2015
 * 2016
 * 2017
@@ -32,19 +32,19 @@ pri vsakem letu smo vzeli vseh 12 mesecev.
 
 ## Problem encodinga ##
 
-Ker so podatki iz spletne strani, so seveda vmes med imeni atributov in njihovimi vrednostmi, katere bomo opisali kasneje), najdejo tudi šumniki.
+Ker so podatki iz spletne strani, se med imeni atributov in njihovimi vrednostmi (opisali jih bomo kasneje) najdejo tudi šumniki.
 
-Ko smo prenesli in zreducirali našo množico, samo ugotovili da veliko šumnikov nas jupyter notebook neprepozna, in zato prikaže čudne znake. Zato smo si zadali da to nekako popravimo. To bi nam pomagalo pri izbiranu vrednsoti iz množice (šumnik nebi bilo mogoče izbrati saj "š" znak ni "š" znak ampak neko drugi znak). Pomagali bi nam pa tudi pri reprezentaciji imen atributov na grafih.
+Ko smo prenesli in zreducirali našo množico, smo ugotovili, da veliko šumnikov naš jupyter notebook ne prepozna, in zato prikaže čudne znake. Zadali smo si, da to nekako popravimo. To bi nam pomagalo pri izbiranu vrednosti iz množice (šumnikov nebi bilo mogoče izbrati saj "š" znak ni "š" znak ampak nek drugi znak). Pomagali bi nam pa tudi pri reprezentaciji imen atributov na grafih.
 
-Po dolgem raziskovanju kateri encoding uporabiti smo se odločili da ta problem in pomankljivost naše množice zanemarimo. Prej naštet problem izbiranja določenih vrstic, je bil rešen z uporabo idjev katere smo prenesli zravn naših podatkov. Uporabili smo samo encoding 'latin1' kateri prikaže samo določene šumnike.
+Po dolgem raziskovanju kateri encoding uporabiti smo se odločili da ta problem in pomankljivost naše množice zanemarimo. Prej naštet problem izbiranja določenih vrstic, je bil rešen z uporabo idjev katere smo prenesli zraven naših podatkov. Uporabili smo samo encoding 'latin1' kateri prikaže samo določene šumnike.
 
 Kot primer uporabe idjev:
 
-Stoplce "barva vozila" vsebuje vrednost Črna, katera se v našem primeru izpiše pravilno. Zato je bil zraven stoplce "barva vozila" dodan tudi stoplev "id barve vozila". Ta nam omogoča da v excel tabeli najdemo črno barvo in nato preko poizvedne po stoplcu z idji barve izberemo vse tiste vrstice oz. avtomobile katerega barva je črna.
+Stolpec "barva vozila" vsebuje vrednost Črna, ki se v našem primeru izpiše pravilno, zato je bil zraven stolpca "barva vozila" dodan tudi stolpec "id barve vozila". Ta nam omogoča da v excel tabeli najdemo črno barvo in nato preko poizvedbe po stoplcu z idji barve izberemo vse tiste vrstice oz. avtomobile, ki so črne barve.
 
 ## Branje podatkov ##
 
-Množica podatkov, katero smo prenesli iz spletne strani je bila v obliki csv datotek, kar nam je mogočalo branje le teh z uporabo csv readerja v napih jupyter notebookih. Iz vseh stolpcev smo izbrali samo določene stoplce saj, nas drugi preprosto niso zanimali pri naših raziskavah.
+Množica podatkov, ki smo jo prenesli iz spletne strani je bila v obliki csv datotek, kar nam je mogočalo branje le teh z uporabo csv readerja v naših jupyter notebookih. Iz vseh stolpcev smo izbrali samo določene stolpce, saj nas drugi niso zanimali pri naših raziskavah.
 
 Opis izbranih atributov se nahaja malo nižje, pod naslovom, Opis atributov in vrednosti.
 
@@ -60,7 +60,7 @@ df1501 = pd.read_csv("../data/2015/Podatki_012015.csv", encoding='latin1', sep='
 5. izbira samo določenih stolpcev
 6. določanje podatkovnega tipa stolpcev
 
-## Opis atrbutov in vrednosti ##
+## Opis atributov in vrednosti ##
 
 * Datum prve registracije, kjerkoli in nato še samo v SLO - zvezna atributa
 * Status vozila - diskretni atribut (odjavljeno, registrirano, v postopku)
@@ -89,7 +89,7 @@ gorivo = data.groupby('P.1.3-Vrsta goriva (opis)')['P.1.3-Vrsta goriva (opis)'].
 
 ![Goriva](images/goriva.png)
 
-Kot je iz grafa razvidno, največ novo registriranih prevoznih sredstev uporablja dizel, na drugem mestu je bencin, in tako naprej. Ostala goriva kot so; naftni plin, kombinirana goriva in zemeljski plin, so tako redka da se jih na grafu niti ne vidi. Pozitivno opažanje iz grafa je to, da so vozila na električni pogoj na tretjem mestu, kar je dobro za naš planet. Vendar sta nafta in bencin kar krepko pred elektriko.
+Kot je iz grafa razvidno, največ novo registriranih prevoznih sredstev uporablja dizel, na drugem mestu je bencin, in tako naprej. Ostala goriva kot so; naftni plin, kombinirana goriva in zemeljski plin, so tako redka, da se jih na grafu niti ne vidi. Pozitivno opažanje iz grafa je to, da so vozila na električni pogoj na tretjem mestu, kar je dobro za naš planet. Vendar sta nafta in bencin kar krepko pred elektriko.
 
 ### Prikaz števila registiranih motornih vozil ki za svoje delovanje uporabljajo gorivo tipa mešanica. ###
 
