@@ -105,3 +105,19 @@ plt.xticks(rotation=90)
 Kot vidimo je največ takih vozil registriranih v mesecu Juniju in Juliju, oziroma poleti. 
 Iz tega lahko razberemo da se je takrat registriralo največ motorjev, skuterjev ter podobnih prevoznih stredstev na dveh kolesih.
 Kar je tudi logično saj se pozimi ni mogoče vozit s takimi prevoznimi sredstvi. Poleti pa je to velik trend.
+
+
+### Povprečna nazivna moč osebnih avtomobilov glede na starostno skupino. ###
+
+```python
+plt.bar(range(len(starost)), avgHP)
+plt.ylim(ymax = 100, ymin = 10)
+plt.xticks(range(len(starost)), starost)
+plt.xticks(rotation=90)
+plt.ylabel('Povprečna nazivna moč')
+plt.xlabel('Starostna skupina')
+```
+![Moc](images/starost_nazivnamoc.png)
+
+Iz grafa je razvidno, da imajo v povprečju najmočnejše avtomobile osebe stare med 32 in 40 leti ter osebe stare med 62 in 70 leti. Pričakovali smo malo drugačne rezultate. Mislili smo, da bodo najmočnejše avtomobile imele osebe mlajše od 40 let.
+Kot vidimo se povprečna moč zmanjša po 40 letu starosti, nato pa spet dvigne pri 62. Sklepamo, da so osebe nad 60 leti finančno močnejše in si zato lahko privoščijo močnejše avtomobile, hkrati pa imajo verjetno tudi manj družinskih in službenih obveznosti.
